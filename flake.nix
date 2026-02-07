@@ -19,12 +19,12 @@
       in
       {
         devShells.default = pkgs.mkShell {
-          buildInputs = [
-            pkgs.python3Packages.jupyterlab
-            pkgs.coursier
-            pkgs.openjdk11
-            pkgs.verilator
-            pkgs.git
+          buildInputs = with pkgs; [
+            jupyter.all
+            coursier
+            openjdk11
+            verilator
+            git
           ];
 
           shellHook = ''
